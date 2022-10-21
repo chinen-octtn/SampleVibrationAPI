@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibration API</title>
+  <style>
+    @keyframes vib {
+      0% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(50%);
+      }
+      40% {
+        transform: translateX(-50%);
+      }
+      60% {
+        transform: translateX(50%);
+      }
+      80% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    button.isActive {
+      animation: vib 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vibration API</h1>
+  <p>ボタンを押すと振動するサンプルです</p>
+  <p>参考ドキュメント：<a href="https://developer.mozilla.org/ja/docs/Web/API/Vibration_API">MDN Vibration API
+  </a></p>
+
+  <button type="button" id="button" class="snd__caution">ぶるぶる</button>
+
+  <script src='https://cdn.jsdelivr.net/gh/snd-lib/snd-lib@v1.1.1/dist/browser/snd.js?kit=02'></script>
+
+  <script>
+    const button = document.querySelector('#button')
+    button.addEventListener('click', ()=>{
+      if(window.navigator.vibrate) {
+        window.navigator.vibrate([200, 100, 200]);
+      }
+      console.log('ぶるぶる')
+      button.classList.add('isActive')
+      setTimeout(()=>{
+        button.classList.remove('isActive')
+      }, 500)
+    })
+  </script>
+</body>
+</html>
