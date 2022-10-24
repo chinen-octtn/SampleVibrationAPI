@@ -44,12 +44,20 @@
     th[scope="row"] {
       text-align: left;
     }
+
+    button {
+      padding: 1em;
+      width: min(80%, 400px);
+      margin: 0 auto;
+      display: block;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <h1>Vibration API</h1>
   <p>ボタンを押すと振動するサンプルです</p>
-  <button type="button" id="button" class="snd__caution">ぶるぶる</button>
+  <button type="button" id="button" class="snd__transition_up">ぶるぶる</button>
 
   <section>
     <h2>対応OS・ブラウザ</h2>
