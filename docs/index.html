@@ -11,22 +11,22 @@
         transform: translateX(0);
       }
       20% {
-        transform: translateX(50%);
+        transform: translateX(25%);
       }
       40% {
-        transform: translateX(-50%);
+        transform: translateX(-25%);
       }
       60% {
-        transform: translateX(50%);
+        transform: translateX(25%);
       }
       80% {
-        transform: translateX(-50%);
+        transform: translateX(-25%);
       }
       100% {
         transform: translateX(0);
       }
     }
-    button.isActive {
+    .isActive {
       animation: vib 0.5s;
     }
 
@@ -86,9 +86,9 @@
         window.navigator.vibrate([200, 100, 200]);
       }
       console.log('ぶるぶる')
-      button.classList.add('isActive')
+      document.body.classList.add('isActive')
       setTimeout(()=>{
-        button.classList.remove('isActive')
+        document.body.classList.remove('isActive')
       }, 500)
     })
   </script>
