@@ -29,15 +29,53 @@
     button.isActive {
       animation: vib 0.5s;
     }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+    th, td {
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      text-align: center;
+
+    }
+    th[scope="row"] {
+      text-align: left;
+    }
   </style>
 </head>
 <body>
   <h1>Vibration API</h1>
   <p>ボタンを押すと振動するサンプルです</p>
+  <button type="button" id="button" class="snd__caution">ぶるぶる</button>
+
+  <section>
+    <h2>対応OS・ブラウザ</h2>
+    <table>
+      <thead>
+        <td></td>
+        <th scope="col">音</th>
+        <th scope="col">バイブレーション</th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Android OS : Chrome</th>
+          <td>◯</td>
+          <td>◯</td>
+        </tr>
+        <tr>
+          <th scope="row">iOS : Safari</th>
+          <td>◯</td>
+          <td>×</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <p>参考ドキュメント：<a href="https://developer.mozilla.org/ja/docs/Web/API/Vibration_API">MDN Vibration API
   </a></p>
-
-  <button type="button" id="button" class="snd__caution">ぶるぶる</button>
 
   <script src='https://cdn.jsdelivr.net/gh/snd-lib/snd-lib@v1.1.1/dist/browser/snd.js?kit=02'></script>
 
